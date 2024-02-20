@@ -46,12 +46,12 @@ int findFunction(int a, int b, char array[][4], int func[]) {
 	else if (a == array[2][0] - '0' && b == array[2][1] - '0') return func[2];
 	else return func[3];
 }
-bool isFourSetsFunction(std::string &string) {
+bool isFourSetsFunction(const std::string &string) {
 	int i = sizeof(string) / sizeof(string[0]);
 	return string.length() == 4 ? 1 : 0;
 }
 
-bool isBinary(std::string &string) {
+bool isBinary(const std::string &string) {
 	for (char c : string) 
 		if (c != '0' && c != '1') return 0;
 	return 1;
