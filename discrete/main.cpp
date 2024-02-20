@@ -21,7 +21,7 @@ void printArray(char array[][4]) {
 	}
 }
 
-void fillArray(char array[][4], std::string functionStringFirst, std::string functionStringSecond) {
+void fillArray(char array[][4],const std::string &functionStringFirst, const std::string &functionStringSecond) {
 	for (int i = 0; i < 4; i++) {
 		if (i < 2)
 			array[i][0] = '0';
@@ -57,7 +57,7 @@ bool isBinary(const std::string &string) {
 	return 1;
 }
 
-void convertArrayToInt(std::string stringArray, int intArray[], int size) {
+void convertArrayToInt(const std::string &stringArray, int intArray[], int size) {
 	for (int i = 0; i < size; i++) {
 		intArray[i] = static_cast<int>(stringArray[i] - '0');
 	}
