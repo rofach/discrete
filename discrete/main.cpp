@@ -23,21 +23,17 @@ void printArray(char array[][4]) {
 
 void fillArray(char array[][4],const std::string &functionStringFirst, const std::string &functionStringSecond) {
 	for (int i = 0; i < 4; i++) {
-		if (i < 2)
-			array[i][0] = '0';
+		if (i < 2) array[i][0] = '0';
 		else array[i][0] = '1';
 	}
 	for (int i = 0; i < 4; i++) {
-		if (i % 2 == 0)
-			array[i][1] = '0';
+		if (i % 2 == 0) array[i][1] = '0';
 		else array[i][1] = '1';
 	}
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) 
 		array[i][2] = functionStringFirst[i];
-	}
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) 
 		array[i][3] = functionStringSecond[i];
-	}
 }
 
 int findFunction(int a, int b, char array[][4], int func[]) {
@@ -58,9 +54,8 @@ bool isBinary(const std::string &string) {
 }
 
 void convertArrayToInt(const std::string &stringArray, int intArray[], int size) {
-	for (int i = 0; i < size; i++) {
-		intArray[i] = static_cast<int>(stringArray[i] - '0');
-	}
+	for (int i = 0; i < size; i++)
+		intArray[i] = static_cast<int>(stringArray[i] - '0');	
 }
 int main() {
 	std::string functionStringFirst;
@@ -85,12 +80,9 @@ int main() {
 	convertArrayToInt(functionStringSecond, functionSecond, 4);
 	
 	cout << "vector of function: ";
-	for (int x2 = 0; x2 <= 1; x2++) {
-		for (int x3 = 0; x3 <= 1; x3++) {
-			for (int x4 = 0; x4 <= 1; x4++) {
+	for (int x2 = 0; x2 <= 1; x2++)
+		for (int x3 = 0; x3 <= 1; x3++)
+			for (int x4 = 0; x4 <= 1; x4++) 
 				cout << findFunction(findFunction(x4, x2, array, functionSecond), x3, array, functionFirst);
-			}
-		}
-	}
 	return 0;
 }
